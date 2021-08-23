@@ -1,4 +1,5 @@
 import 'package:core/Home.dart';
+import 'package:core/ItemPage.dart';
 import 'package:core/Nav_Bar.dart';
 import 'package:core/Saved.dart';
 import 'package:core/main.dart';
@@ -100,142 +101,159 @@ class _ShoppingCartState extends State<ShoppingCart> {
                           child: Card(
                             elevation: height * 0.005,
                             color: Colors.black,
-                            child: Container(
-                                height: height * 0.35,
-                                width: width * 0.87,
-                                decoration: BoxDecoration(
-                                  color: Colors.black,
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                                child: Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Row(
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsets.all(8.0),
-                                        child: Container(
-                                          height: height * 0.3,
-                                          width: width * 0.41,
-                                          decoration: BoxDecoration(
-                                            borderRadius:
-                                                BorderRadius.circular(10),
-                                            color: Colors.white,
-                                            image: new DecorationImage(
-                                              image: NetworkImage(
-                                                  Cart[index]["image"]),
-                                              fit: BoxFit.contain,
+                            child: GestureDetector(
+                              onTap: () => {
+                                item = [],
+                                wait(1),
+                                item.add(Cart[index]),
+                                wait(1),
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => ItemPage()))
+                              },
+                              child: Container(
+                                  height: height * 0.35,
+                                  width: width * 0.87,
+                                  decoration: BoxDecoration(
+                                    color: Colors.black,
+                                    borderRadius: BorderRadius.circular(20),
+                                  ),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Row(
+                                      children: [
+                                        Padding(
+                                          padding: EdgeInsets.all(8.0),
+                                          child: Container(
+                                            height: height * 0.3,
+                                            width: width * 0.41,
+                                            decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(10),
+                                              color: Colors.white,
+                                              image: new DecorationImage(
+                                                image: NetworkImage(
+                                                    Cart[index]["image"]),
+                                                fit: BoxFit.contain,
+                                              ),
                                             ),
                                           ),
                                         ),
-                                      ),
-                                      SizedBox(
-                                        width: width * 0.05,
-                                      ),
-                                      Column(
-                                        children: [
-                                          Container(
-                                            height: height * 0.16,
-                                            width: width * 0.30,
-                                            color: Colors.black,
-                                            child: Text(
-                                              Cart[index]["title"],
-                                              style: TextStyle(
-                                                  fontFamily: 'STIXTwoText',
-                                                  color: Colors.white,
-                                                  fontSize: 15,
-                                                  fontWeight: FontWeight.w700),
+                                        SizedBox(
+                                          width: width * 0.05,
+                                        ),
+                                        Column(
+                                          children: [
+                                            Container(
+                                              height: height * 0.16,
+                                              width: width * 0.30,
+                                              color: Colors.black,
+                                              child: Text(
+                                                Cart[index]["title"],
+                                                style: TextStyle(
+                                                    fontFamily: 'STIXTwoText',
+                                                    color: Colors.white,
+                                                    fontSize: 15,
+                                                    fontWeight:
+                                                        FontWeight.w700),
+                                              ),
                                             ),
-                                          ),
-                                          SizedBox(
-                                            height: height * 0.025,
-                                          ),
-                                          Center(
-                                            child: Card(
-                                              elevation: height * 0.005,
-                                              child: Container(
-                                                decoration: BoxDecoration(
-                                                  borderRadius:
-                                                      BorderRadius.circular(4),
-                                                  color: Colors.white,
-                                                ),
-                                                height: height * 0.03,
-                                                width: width * 0.30,
-                                                child: Padding(
-                                                  padding:
-                                                      const EdgeInsets.all(1.0),
-                                                  child: Center(
-                                                    child: Text(
-                                                      '\$ ' +
-                                                          Cart[index]["price"]
-                                                              .toString(),
-                                                      style: TextStyle(
-                                                        fontFamily:
-                                                            'STIXTwoText',
-                                                        color: Colors.black,
-                                                        fontSize: 20,
-                                                        fontWeight:
-                                                            FontWeight.bold,
+                                            SizedBox(
+                                              height: height * 0.025,
+                                            ),
+                                            Center(
+                                              child: Card(
+                                                elevation: height * 0.005,
+                                                child: Container(
+                                                  decoration: BoxDecoration(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            4),
+                                                    color: Colors.white,
+                                                  ),
+                                                  height: height * 0.03,
+                                                  width: width * 0.30,
+                                                  child: Padding(
+                                                    padding:
+                                                        const EdgeInsets.all(
+                                                            1.0),
+                                                    child: Center(
+                                                      child: Text(
+                                                        '\$ ' +
+                                                            Cart[index]["price"]
+                                                                .toString(),
+                                                        style: TextStyle(
+                                                          fontFamily:
+                                                              'STIXTwoText',
+                                                          color: Colors.black,
+                                                          fontSize: 20,
+                                                          fontWeight:
+                                                              FontWeight.bold,
+                                                        ),
                                                       ),
                                                     ),
                                                   ),
                                                 ),
                                               ),
                                             ),
-                                          ),
-                                          SizedBox(
-                                            height: height * 0.04,
-                                          ),
-                                          Center(
-                                            child: Row(
-                                              children: [
-                                                IconButton(
-                                                    onPressed: () {
-                                                      Toast.show(
-                                                          "Item Removed to Cart",
-                                                          context,
-                                                          duration:
-                                                              Toast.LENGTH_LONG,
-                                                          gravity:
-                                                              Toast.BOTTOM);
-                                                      Navigator.push(
-                                                          context,
-                                                          MaterialPageRoute(
-                                                              builder: (context) =>
-                                                                  ShoppingCart()));
-                                                      Cart.remove(Cart[index]);
-                                                    },
-                                                    icon: Icon(
-                                                      Icons
-                                                          .remove_shopping_cart,
-                                                      color: Colors.white,
-                                                    )),
-                                                SizedBox(
-                                                  width: width * 0.001,
-                                                ),
-                                                IconButton(
-                                                    onPressed: () {
-                                                      saved.add(Cart[index]);
-                                                      Toast.show(
-                                                          "Item Saved to Bookmarks",
-                                                          context,
-                                                          duration:
-                                                              Toast.LENGTH_LONG,
-                                                          gravity:
-                                                              Toast.BOTTOM);
-                                                    },
-                                                    icon: Icon(
-                                                      Icons
-                                                          .bookmark_add_outlined,
-                                                      color: Colors.white,
-                                                    )),
-                                              ],
+                                            SizedBox(
+                                              height: height * 0.04,
                                             ),
-                                          )
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                )),
+                                            Center(
+                                              child: Row(
+                                                children: [
+                                                  IconButton(
+                                                      onPressed: () {
+                                                        Toast.show(
+                                                            "Item Removed to Cart",
+                                                            context,
+                                                            duration: Toast
+                                                                .LENGTH_LONG,
+                                                            gravity:
+                                                                Toast.BOTTOM);
+                                                        Navigator.push(
+                                                            context,
+                                                            MaterialPageRoute(
+                                                                builder:
+                                                                    (context) =>
+                                                                        ShoppingCart()));
+                                                        Cart.remove(
+                                                            Cart[index]);
+                                                      },
+                                                      icon: Icon(
+                                                        Icons
+                                                            .remove_shopping_cart,
+                                                        color: Colors.white,
+                                                      )),
+                                                  SizedBox(
+                                                    width: width * 0.001,
+                                                  ),
+                                                  IconButton(
+                                                      onPressed: () {
+                                                        saved.add(Cart[index]);
+                                                        Toast.show(
+                                                            "Item Saved to Bookmarks",
+                                                            context,
+                                                            duration: Toast
+                                                                .LENGTH_LONG,
+                                                            gravity:
+                                                                Toast.BOTTOM);
+                                                      },
+                                                      icon: Icon(
+                                                        Icons
+                                                            .bookmark_add_outlined,
+                                                        color: Colors.white,
+                                                      )),
+                                                ],
+                                              ),
+                                            )
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  )),
+                            ),
                           ),
                         );
                       }),
