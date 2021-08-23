@@ -1,5 +1,5 @@
 # CoreAppDevsoc
- 
+ ![logo](https://user-images.githubusercontent.com/72306130/130441359-f5f10268-4dca-4d99-b174-43cf4f3983ad.png)
  ## About:
  This app is designed according to the requirements of the core project assignment given by DevSoc, BITS Goa.
  Through this app, the fruits of my app development journey in my first year has been presented. 
