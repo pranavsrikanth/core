@@ -15,8 +15,8 @@
  There are a few shortcomings in my app. For example, the items in the cart screen can be duplicated. In the coming days, I aim to improve the app to try and make it industrial standard code. I hope to achieve this level soon! 
  
  ## Demo
- You can get the apk [here](https://github.com/pranavsrikanth/core/blob/main/BuyIT.apk)
- The drive link for a video demo is [here](https://drive.google.com/file/d/1AaWjnoWfHoi7PeKjAeQ30g2nC7Tk7Ndi/view?usp=sharing)
+ - You can get the apk [here](https://github.com/pranavsrikanth/core/blob/main/BuyIT.apk)
+ - The drive link for a video demo is [here](https://drive.google.com/file/d/1AaWjnoWfHoi7PeKjAeQ30g2nC7Tk7Ndi/view?usp=sharing)
  
  ## Screenshots       
 <p float = "left">
