@@ -38,16 +38,14 @@ class _AppState extends State<App> {
       // Initialize FlutterFire:
       future: Firebase.initializeApp(),
       builder: (context, snapshot) {
-        // Check for errors
+        // Once complete, show your application
         if (snapshot.connectionState == ConnectionState.done) {
           return Anim();
         }
+        // Check for errors
         if (snapshot.hasError) {
           print("Error!!!");
         }
-
-        // Once complete, show your application
-
         // Otherwise, show something whilst waiting for initialization to complete
         return CircularProgressIndicator.adaptive();
       },
