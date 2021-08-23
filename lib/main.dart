@@ -5,6 +5,7 @@ import 'animation.dart';
 
 List Cart = [];
 List saved = [];
+List item = [];
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
 
