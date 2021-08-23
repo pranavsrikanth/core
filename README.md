@@ -16,6 +16,7 @@
  
  ## Demo
  You can get the apk [here](https://github.com/pranavsrikanth/core/blob/main/BuyIT.apk)
+ The drive link for a video demo is [here](https://drive.google.com/file/d/1AaWjnoWfHoi7PeKjAeQ30g2nC7Tk7Ndi/view?usp=sharing)
  
  ## Screenshots       
 <p float = "left">
