@@ -122,12 +122,12 @@ class _AnimState extends State<Anim> {
                             FirebaseService service = new FirebaseService();
                             try {
                               await service.signInwithGoogle();
-                              Navigator.push(
-                                  context,
+                              Navigator.of(context).pushAndRemoveUntil(
                                   PageRouteBuilder(
                                       pageBuilder: (context, _, a) => Home(),
                                       transitionDuration:
-                                          Duration(milliseconds: 1000)));
+                                          Duration(milliseconds: 1000)),
+                                  (Route<dynamic> route) => false);
                             } catch (e) {
                               if (e is FirebaseAuthException) {
                                 showMessage(e.message!);

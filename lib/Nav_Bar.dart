@@ -134,8 +134,9 @@ class _NavBarState extends State<NavBar> {
                 FirebaseAuth.instance.signOut();
                 _googleSignIn.disconnect();
 
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => Anim()));
+                Navigator.of(context).pushAndRemoveUntil(
+                    MaterialPageRoute(builder: (context) => Anim()),
+                    (Route<dynamic> route) => false);
               })
         ],
       ),
